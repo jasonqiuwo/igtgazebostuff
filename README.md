@@ -4,7 +4,8 @@ mkdir colcon_ws
 cd colcon_ws
 mkdir src
 cd src
-
+git clone https://github.com/jasonqiuwo/igtgazebostuff.git
+cd ..
 ```
 
 
