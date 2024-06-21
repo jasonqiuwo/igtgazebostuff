@@ -1,3 +1,13 @@
+- Create sub directories
+```bash
+mkdir colcon_ws
+cd colcon_ws
+mkdir src
+cd src
+
+```
+
+
 - Run and open Gazebo world 
 ```bash
 cd colcon_ws
