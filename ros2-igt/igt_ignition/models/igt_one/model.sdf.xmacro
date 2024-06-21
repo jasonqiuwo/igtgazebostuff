@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.8">
+	<model name="igt_one">
+		<link name="base_link">
+			<pose>0 0 0 0 0 0</pose>
+			<inertial>
+				<pose>0 0 0.062329 0 0 0</pose>
+				<!-- <pose>-0.005131 -0.003499 0.186131 0 -0 0</pose> -->
+				<mass>46.064</mass>
+				<inertia>
+					<ixx>0.615397</ixx>
+					<ixy>-0.0240585</ixy>
+					<ixz>-0.120749</ixz>
+					<iyy>1.75388</iyy>
+					<iyz>-0.0028322</iyz>
+					<izz>2.03641</izz>
+				</inertia>
+			</inertial>
+
+			<!-- <collision name="base_link_collision">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/base_link.stl</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<contact>
+						<ode/>
+					</contact>
+					<friction>
+						<ode>
+							<mu>1</mu>
+							<mu2>1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision> -->
+
+			<collision name="base_link_collision">
+				<pose>0 0 0.12 0 0 0</pose>
+				<geometry>
+				<box>
+					<size>0.9874 0.5709 0.05</size>
+				</box>
+				</geometry>
+			</collision>
+
+			<collision name="base_link_collision_bottom">
+				<pose>0 0 0.046 0 0 0</pose>
+				<geometry>
+				<box>
+					<size>0.80 0.5709 0.095</size>
+				</box>
+				</geometry>
+			</collision>
+
+			<collision name="base_link_collision_1">
+				<pose>0 0 0.185625 0 0 0</pose>
+				<geometry>
+				<box>
+					<size>0.78992 0.5709 0.12375</size>
+				</box>
+				</geometry>
+			</collision>
+
+			<collision name="base_link_fixed_joint_lump__lidar_collision_1">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/lidar.stl</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<contact>
+						<ode/>
+					</contact>
+					<friction>
+						<ode>
+							<mu>1</mu>
+							<mu2>1</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<!-- <collision name="base_link_fixed_joint_lump__caster_front_collision_2">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/caster_front.stl</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<contact>
+						<ode/>
+					</contact>
+					<friction>
+						<ode>
+							<mu>0.01</mu>
+							<mu2>0.01</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<collision name="base_link_fixed_joint_lump__caster_back_collision_3">
+				<pose>0 0 0 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/caster_back.stl</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<contact>
+						<ode/>
+					</contact>
+					<friction>
+						<ode>
+							<mu>0.01</mu>
+							<mu2>0.01</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision> -->
+
+			<collision name="base_link_fixed_joint_lump__d435_link_collision_4">
+				<pose>0 0 0.5125 0 -0 0</pose>
+				<geometry>
+					<box>
+						<size>0.02505 0.09 0.025</size>
+					</box>
+				</geometry>
+				<surface>
+					<contact>
+						<ode>
+							<kp>1e+13</kp>
+							<kd>1</kd>
+						</ode>
+					</contact>
+					<friction>
+						<ode>
+							<mu2>1</mu2>
+							<fdir1>0 0 0</fdir1>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+
+			<!-- <collision name="base_link_fixed_joint_lump__camera/camera_link_collision_2">
+				<pose>0.488 0 0.272 0 0 0</pose>
+				<geometry>
+				<box>
+					<size>0.0078 0.13 0.0192</size>
+				</box>
+				</geometry>
+				<surface>
+				<contact>
+					<ode>
+					<kp>1e+13</kp>
+					<kd>1</kd>
+					</ode>
+				</contact>
+				<friction>
+					<ode>
+					<mu2>1</mu2>
+					<fdir1>0 0 0</fdir1>
+					</ode>
+				</friction>
+				</surface>
+			</collision> -->
+
+			<!--<visual name="base_link_visual">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/base_link.stl</uri>
+					</mesh>
+				</geometry>
+				<material>
+					<ambient>0.7 0.7 0.7 1.0</ambient>
+					<diffuse>0.7 0.7 0.7 1.0</diffuse>
+					<specular>0.01 0.01 0.01 1.0</specular>
+				</material>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__lidar_visual_1">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/lidar.stl</uri>
+					</mesh>
+				</geometry>
+				<material>
+					<ambient>0.1 0.1 0.1 1.0</ambient>
+					<diffuse>0.1 0.1 0.1 1.0</diffuse>
+					<specular>0.01 0.01 0.01 1.0</specular>
+				</material>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__caster_front_visual_2">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/caster_front.stl</uri>
+					</mesh>
+				</geometry>
+				<material>
+					<ambient>0.4 0.4 0.4 1.0</ambient>
+					<diffuse>0.4 0.4 0.4 1.0</diffuse>
+					<specular>0.01 0.01 0.01 1.0</specular>
+				</material>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__caster_back_visual_3">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/caster_back.stl</uri>
+					</mesh>
+				</geometry>
+				<material>
+					<ambient>0.4 0.4 0.4 1.0</ambient>
+					<diffuse>0.4 0.4 0.4 1.0</diffuse>
+					<specular>0.01 0.01 0.01 1.0</specular>
+				</material>
+			</visual> 
+
+			<visual name="base_link_fixed_joint_lump__d435_link_visual_4">
+				<pose>0.0149 -0.0175 0 1.5708 -0 1.5708</pose>
+				<geometry>
+					<mesh>
+						<scale>1 1 1</scale>
+						<uri>model://igt_one/meshes/realsense_d435.stl</uri>
+					</mesh>
+				</geometry>
+			</visual> -->
+
+			<collision name="base_link_fixed_joint_lump__camera/camera_link_collision_2">
+				<pose>0.488 0 0.272 0 0 0</pose>
+				<geometry>
+				<box>
+					<size>0.0078 0.13 0.0192</size>
+				</box>
+				</geometry>
+				<surface>
+				<contact>
+					<ode>
+					<kp>1e+13</kp>
+					<kd>1</kd>
+					</ode>
+				</contact>
+				<friction>
+					<ode>
+					<mu2>1</mu2>
+					<fdir1>0 0 0</fdir1>
+					</ode>
+				</friction>
+				</surface>
+			</collision>
+
+			<collision name="base_link_fixed_joint_lump__top_plate_link_collision_3">
+				<pose>0.0812 0 0.245 0 0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/top_plate.dae</uri>
+				</mesh>
+				</geometry>
+			</collision>
+			
+			<collision name="base_link_fixed_joint_lump__top_plate_link_collision_4">
+				<pose>0.0812 0 0.245 0 0 0</pose>
+				<geometry>
+				<box>
+					<size>0.32 0.41 0.09</size>
+				</box>
+				</geometry>
+			</collision>
+
+			<visual name="base_link_visual">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/base_link.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__d435_link_visual_4">
+				<pose>0.438 0 0.272 0 0 0</pose>
+				<geometry>
+				<mesh>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/realsense.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__lidar_visual_1">
+				<pose>0.435 0 0.235 -2.35619 0 -1.5708</pose>
+				<geometry>
+				<cylinder>
+					<length>0.02</length>
+					<radius>0.005</radius>
+				</cylinder>
+				</geometry>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__front_bumper_link_visual_3">
+				<pose>0.48 0 0.091 0 0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/bumper.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__rear_bumper_link_visual_4">
+				<pose>-0.48 0 0.091 0 0 3.14159</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/bumper.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__top_chassis_link_visual_5">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/top_chassis.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+
+			<visual name="base_link_fixed_joint_lump__top_plate_link_visual_6">
+				<pose>0.0812 0 0.245 0 -0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/top_plate.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+
+
+			<sensor name="front_lidar" type="gpu_lidar">
+				<pose>0.278738 0 0.275 0 0 0</pose>
+				<topic>/model/igt_one/laserscan</topic>
+				<visualize>0</visualize>
+				<update_rate>10</update_rate>
+				<always_on>1</always_on>
+				<ray>
+					<scan>
+						<horizontal>
+							<samples>720</samples>
+							<resolution>1</resolution>
+							<min_angle>-1.8326</min_angle>
+							<max_angle>1.8326</max_angle>
+						</horizontal>
+					</scan>
+					<range>
+						<min>0.05</min>
+						<max>20</max>
+						<resolution>0.01</resolution>
+					</range>
+					<noise>
+						<type>gaussian</type>
+						<mean>0</mean>
+						<stddev>0.01</stddev>
+					</noise>
+				</ray>
+			</sensor>
+			<velocity_decay/>
+			
+			<sensor name="d435_color" type="camera">
+				<always_on>1</always_on>
+				<update_rate>30</update_rate>
+				<visualize>1</visualize>
+				<pose>0 0.0175 0.5125 0 -0 0</pose>
+				<topic>/model/igt_one/color_camera</topic>
+				<camera name="d435">
+					<horizontal_fov>1.21126</horizontal_fov>
+					<image>
+						<width>640</width>
+						<height>480</height>
+						<format>RGB_INT8</format>
+					</image>
+					<clip>
+						<near>0.1</near>
+						<far>100</far>
+					</clip>
+					<noise>
+						<type>gaussian</type>
+						<mean>0</mean>
+						<stddev>0.007</stddev>
+					</noise>
+				</camera>
+			</sensor>
+			
+			<sensor name="d435_depth" type="depth_camera">
+				<always_on>1</always_on>
+				<update_rate>90</update_rate>
+				<visualize>0</visualize>
+				<topic>/model/igt_one/depth_camera</topic>
+				<pose>0 0.0175 0.5125 0 -0 0</pose>
+				<camera name="d435">
+					<horizontal_fov>1.48702</horizontal_fov>
+					<image>
+						<width>1280</width>
+						<height>720</height>
+					</image>
+					<clip>
+						<near>0.1</near>
+						<far>100</far>
+					</clip>
+					<noise>
+						<type>gaussian</type>
+						<mean>0</mean>
+						<stddev>0.1</stddev>
+					</noise>
+				</camera>
+			</sensor>
+
+			<light name="flashlight_flashlight_light_source_lamp_light" type="spot">
+				<pose>0.48 0.08 0.12 3.141592653589793 1.5707926535897934 -0.0015926535897931</pose>
+				<attenuation>
+					<range>50</range>
+					<linear>0</linear>
+					<constant>0.1</constant>
+					<quadratic>0.0025</quadratic>
+				</attenuation>
+				<diffuse>0.8 0.8 0.5 1</diffuse>
+				<specular>0.8 0.8 0.5 1</specular>
+				<spot>
+					<inner_angle>1.2</inner_angle>
+					<outer_angle>1.3</outer_angle>
+					<falloff>1</falloff>
+				</spot>
+				<direction>0 0 -1</direction>
+			</light>
+
+			<visual name="flashlight_flashlight_light_source_lamp_viz_visual">
+				<pose>0.48 0.08 0.12 3.141592653589793 1.5707926535897934 -0.0015926535897931</pose>
+				<geometry>
+					<cylinder>
+						<radius>0.019</radius>
+						<length>0.005</length>
+					</cylinder>
+				</geometry>
+				<transparency>0</transparency>
+				<material>
+					<ambient>1 1 1 1</ambient>
+					<diffuse>1 1 1 1</diffuse>
+					<specular>1 1 1 1</specular>
+					<emissive>1 1 1 1</emissive>
+				</material>
+			</visual>
+		</link>
+
+		<link name="front_left_wheel">
+			<pose>0.256 0.2854 0.03282 0 -0 0</pose>
+			<inertial>
+				<pose>0 0 0 0 -0 0</pose>
+				<mass>2.637</mass>
+				<inertia>
+				<ixx>0.02467</ixx>
+				<ixy>0</ixy>
+				<ixz>0</ixz>
+				<iyy>0.04411</iyy>
+				<iyz>0</iyz>
+				<izz>0.02467</izz>
+				</inertia>
+			</inertial>
+
+			<collision name="front_left_wheel_link_collision">
+				<pose>0 0 0 1.5707963267948966 -0 0</pose>
+				<geometry>
+				<cylinder>
+					<length>0.1143</length>
+					<radius>0.1651</radius>
+				</cylinder>
+				</geometry>
+				<surface>
+				<contact>
+					<ode>
+					<kp>1e+07</kp>
+					<kd>1</kd>
+					</ode>
+				</contact>
+				<friction>
+					<ode>
+					<mu>0.5</mu>
+					<mu2>1</mu2>
+					<slip1>0.00062</slip1>
+					<slip2>0</slip2>
+					<fdir1>0 0 1</fdir1>
+					</ode>
+				</friction>
+				</surface>
+			</collision>
+
+			<visual name="front_left_wheel_link_visual">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>1 1 1</scale>
+						<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/wheel.dae</uri>
+					</mesh>
+				</geometry>
+			</visual>
+			<gravity>1</gravity>
+			<velocity_decay/>
+		</link>
+
+		<joint name="front_left_motor" type="revolute">
+			<child>front_left_wheel</child>
+			<parent>base_link</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+				<lower>-1e+16</lower>
+				<upper>1e+16</upper>
+				</limit>
+				<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>0</spring_stiffness>
+				</dynamics>
+				<use_parent_model_frame>1</use_parent_model_frame>
+			</axis>
+		</joint>
+
+		<link name="front_right_wheel">
+			<pose>0.256 -0.2854 0.03282 0 -0 0</pose>
+			<inertial>
+				<pose>0 0 0 0 -0 0</pose>
+				<mass>2.637</mass>
+				<inertia>
+				<ixx>0.02467</ixx>
+				<ixy>0</ixy>
+				<ixz>0</ixz>
+				<iyy>0.04411</iyy>
+				<iyz>0</iyz>
+				<izz>0.02467</izz>
+				</inertia>
+			</inertial>
+
+			<collision name="front_right_wheel_link_collision">
+				<pose>0 0 0 1.5707963267948966 -0 0</pose>
+				<geometry>
+				<cylinder>
+					<length>0.1143</length>
+					<radius>0.1651</radius>
+				</cylinder>
+				</geometry>
+				<surface>
+				<contact>
+					<ode>
+					<kp>1e+07</kp>
+					<kd>1</kd>
+					</ode>
+				</contact>
+				<friction>
+					<ode>
+					<mu>0.5</mu>
+					<mu2>1</mu2>
+					<slip1>0.00062</slip1>
+					<slip2>0</slip2>
+					<fdir1>0 0 1</fdir1>
+					</ode>
+				</friction>
+				</surface>
+			</collision>
+
+			<visual name="front_right_wheel_link_visual">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/wheel.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+			<gravity>1</gravity>
+			<velocity_decay/>
+		</link>
+
+		<joint name="front_right_motor" type="revolute">
+			<child>front_right_wheel</child>
+			<parent>base_link</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+				<lower>-1e+16</lower>
+				<upper>1e+16</upper>
+				</limit>
+				<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>0</spring_stiffness>
+				</dynamics>
+				<use_parent_model_frame>1</use_parent_model_frame>
+			</axis>
+		</joint>
+
+		<link name="rear_left_wheel">
+			<pose>-0.256 0.2854 0.03282 0 -0 0</pose>
+			<inertial>
+				<pose>0 0 0 0 -0 0</pose>
+				<mass>2.637</mass>
+				<inertia>
+				<ixx>0.02467</ixx>
+				<ixy>0</ixy>
+				<ixz>0</ixz>
+				<iyy>0.04411</iyy>
+				<iyz>0</iyz>
+				<izz>0.02467</izz>
+				</inertia>
+			</inertial>
+
+			<collision name="rear_left_wheel_link_collision">
+				<pose>0 0 0 1.5707963267948966 -0 0</pose>
+				<geometry>
+				<cylinder>
+					<length>0.1143</length>
+					<radius>0.1651</radius>
+				</cylinder>
+				</geometry>
+				<surface>
+				<contact>
+					<ode>
+					<kp>1e+07</kp>
+					<kd>1</kd>
+					</ode>
+				</contact>
+				<friction>
+					<ode>
+					<mu>0.5</mu>
+					<mu2>1</mu2>
+					<slip1>0.00062</slip1>
+					<slip2>0</slip2>
+					<fdir1>0 0 1</fdir1>
+					</ode>
+				</friction>
+				</surface>
+			</collision>
+
+			<visual name="rear_left_wheel_link_visual">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/wheel.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+			<gravity>1</gravity>
+			<velocity_decay/>
+		</link>
+
+		<joint name="rear_left_motor" type="revolute">
+			<child>rear_left_wheel</child>
+			<parent>base_link</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+				<lower>-1e+16</lower>
+				<upper>1e+16</upper>
+				</limit>
+				<dynamics>
+					<spring_reference>0</spring_reference>
+					<spring_stiffness>0</spring_stiffness>
+				</dynamics>
+				<use_parent_model_frame>1</use_parent_model_frame>
+			</axis>
+		</joint>
+
+		<link name="rear_right_wheel">
+			<pose >-0.256 -0.2854 0.03282 0 -0 0</pose>
+			<inertial>
+				<pose>0 0 0 0 -0 0</pose>
+				<mass>2.637</mass>
+				<inertia>
+				<ixx>0.02467</ixx>
+				<ixy>0</ixy>
+				<ixz>0</ixz>
+				<iyy>0.04411</iyy>
+				<iyz>0</iyz>
+				<izz>0.02467</izz>
+				</inertia>
+			</inertial>
+
+			<collision name="rear_right_wheel_link_collision">
+				<pose>0 0 0 1.5707963267948966 -0 0</pose>
+				<geometry>
+				<cylinder>
+					<length>0.1143</length>
+					<radius>0.1651</radius>
+				</cylinder>
+				</geometry>
+				<surface>
+				<contact>
+					<ode>
+					<kp>1e+07</kp>
+					<kd>1</kd>
+					</ode>
+				</contact>
+				<friction>
+					<ode>
+					<mu>0.5</mu>
+					<mu2>1</mu2>
+					<slip1>0.00062</slip1>
+					<slip2>0</slip2>
+					<fdir1>0 0 1</fdir1>
+					</ode>
+				</friction>
+				</surface>
+			</collision>
+
+			<visual name="rear_right_wheel_link_visual">
+				<pose>0 0 0 0 -0 0</pose>
+				<geometry>
+				<mesh>
+					<scale>1 1 1</scale>
+					<uri>file:///home/jasonwoo/colcon_ws/src/ros2-igt/igt_ignition/igt_one/meshes/wheel.dae</uri>
+				</mesh>
+				</geometry>
+			</visual>
+			<gravity>1</gravity>
+			<velocity_decay/>
+		</link>
+
+		<joint name="rear_right_motor" type="revolute">
+			<child>rear_right_wheel</child>
+			<parent>base_link</parent>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+				<lower>-1e+16</lower>
+				<upper>1e+16</upper>
+				</limit>
+				<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>0</spring_stiffness>
+				</dynamics>
+				<use_parent_model_frame>1</use_parent_model_frame>
+			</axis>
+		</joint>
+
+		<!-- <link name="left_wheel">
+			<pose relative_to="base_link">0 0.214022 0.07811 0 0 0</pose>
+			<inertial>
+				<pose>0 0.030102 0 0 -0 0</pose>
+				<mass>5.89813</mass>
+				<inertia>
+					<ixx>0.009626</ixx>
+					<ixy>0</ixy>
+					<ixz>3e-06</ixz>
+					<iyy>0.017338</iyy>
+					<iyz>0</iyz>
+					<izz>0.009622</izz>
+				</inertia>
+			</inertial>
+			<collision name="left_wheel_collision">
+				<pose>0 -0.214022 -0.07811 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/left_wheel.stl</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<contact>
+						<ode/>
+					</contact>
+					<friction>
+						<ode>
+							<mu>500</mu>
+							<mu2>500</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+			<visual name="left_wheel_visual">
+				<pose>0 -0.214022 -0.07811 0 -0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/left_wheel.stl</uri>
+					</mesh>
+				</geometry>
+				<material>
+					<ambient>0.4 0.4 0.4 1.0</ambient>
+					<diffuse>0.4 0.4 0.4 1.0</diffuse>
+					<specular>0.01 0.01 0.01 1.0</specular>
+				</material>
+			</visual>
+		</link>
+
+		<joint name="left_motor" type="revolute">
+			<parent>base_link</parent>
+			<child>left_wheel</child>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+					<lower>-1e+16</lower>
+					<upper>1e+16</upper>
+				</limit>
+			</axis>
+			<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>0</spring_stiffness>
+			</dynamics>
+			<use_parent_model_frame>1</use_parent_model_frame>
+		</joint>
+
+		<link name="right_wheel">
+			<pose relative_to="base_link">0 -0.214022 0.07811 0 0 0</pose>
+			<inertial>
+				<pose>0 -0.030102 0 0 0 0</pose>
+				<mass>5.89813</mass>
+				<inertia>
+					<ixx>0.009626</ixx>
+					<ixy>0</ixy>
+					<ixz>3e-06</ixz>
+					<iyy>0.017338</iyy>
+					<iyz>0</iyz>
+					<izz>0.009622</izz>
+				</inertia>
+			</inertial>
+			<collision name="right_wheel_collision">
+				<pose>0 0.214022 -0.07811 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/right_wheel.stl</uri>
+					</mesh>
+				</geometry>
+				<surface>
+					<contact>
+						<ode/>
+					</contact>
+					<friction>
+						<ode>
+							<mu>500</mu>
+							<mu2>500</mu2>
+						</ode>
+					</friction>
+				</surface>
+			</collision>
+			<visual name="right_wheel_visual">
+				<pose>0 0.214022 -0.07811 0 0 0</pose>
+				<geometry>
+					<mesh>
+						<scale>0.001 0.001 0.001</scale>
+						<uri>model://igt_one/meshes/right_wheel.stl</uri>
+					</mesh>
+				</geometry>
+				<material>
+					<ambient>0.4 0.4 0.4 1.0</ambient>
+					<diffuse>0.4 0.4 0.4 1.0</diffuse>
+					<specular>0.01 0.01 0.01 1.0</specular>
+				</material>
+			</visual>
+		</link>
+
+		<joint name="right_motor" type="revolute">
+			<parent>base_link</parent>
+			<child>right_wheel</child>
+			<axis>
+				<xyz>0 1 0</xyz>
+				<limit>
+					<lower>-1e+16</lower>
+					<upper>1e+16</upper>
+				</limit>
+			</axis>
+			<dynamics>
+				<spring_reference>0</spring_reference>
+				<spring_stiffness>0</spring_stiffness>
+			</dynamics>
+			<use_parent_model_frame>1</use_parent_model_frame>
+		</joint> -->
+		
+		<plugin filename="libignition-gazebo-joint-state-publisher-system.so" name="ignition::gazebo::systems::JointStatePublisher"/>
+
+		<plugin filename="ignition-gazebo-diff-drive-system" name="ignition::gazebo::systems::DiffDrive">
+			<num_wheel_pairs>2</num_wheel_pairs>
+			<left_joint>front_left_motor</left_joint>
+			<right_joint>front_right_motor</right_joint>
+			<left_joint>rear_left_motor</left_joint>
+			<right_joint>rear_right_motor</right_joint>
+			<wheel_separation>0.57</wheel_separation>
+			<wheel_radius>0.165</wheel_radius>
+			<publishWheelTF>true</publishWheelTF>
+			<publishOdom>true</publishOdom>
+			<publishWheelJointState>true</publishWheelJointState>
+			<odom_publish_frequency>1</odom_publish_frequency>
+			<topic>cmd_vel</topic>
+			<odometryTopic>odom</odometryTopic>
+			<odometryFrame>odom</odometryFrame>
+			<robotBaseFrame>base_link</robotBaseFrame>
+		</plugin>
+
+		<!-- <plugin filename="ignition-gazebo-diff-drive-system" name="ignition::gazebo::systems::DiffDrive">
+			<left_joint>left_motor</left_joint>
+			<right_joint>right_motor</right_joint>
+			<wheel_separation>0.494</wheel_separation>
+			<wheel_radius>0.078</wheel_radius>
+			<frame_id>odom</frame_id>
+			<child_frame_id>base_link</child_frame_id>
+			<odom_publish_frequency>1</odom_publish_frequency>
+			<publishWheelTF>true</publishWheelTF>
+			<publishOdom>true</publishOdom>
+			<publishWheelJointState>true</publishWheelJointState>
+			<topic>cmd_vel</topic>
+		</plugin> -->
+	</model>
+</sdf>
